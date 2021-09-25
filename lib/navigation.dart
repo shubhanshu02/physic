@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:physic/profile.dart';
-
+import 'leaderboard.dart';
 import 'homePage.dart';
 
 class Navigate extends StatefulWidget {
@@ -13,7 +13,7 @@ class _NavigateState extends State<Navigate> {
   final List<Widget> children = [
     HomePage(),
     Profile(),
-    Profile(),
+    LeaderboardPage(),
     Profile()
   ];
   int currentIndex=0;

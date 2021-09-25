@@ -11,7 +11,9 @@ class Physic extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(title: 'Physic', routes: {
-      '/': (context) => (FirebaseAuth.instance.currentUser == null) ? LoginPage() : Navigate(),
+      '/': (context) => (FirebaseAuth.instance.currentUser == null)
+          ? LoginPage()
+          : Navigate(),
       '/register': (context) => RegisterPage(),
     });
   }
