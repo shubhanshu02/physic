@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'dart:math';
 
 class TeamData {
@@ -130,9 +131,14 @@ class _RegisterFormState extends State<RegisterForm> {
             Column(
               children: [
                 Container(
-                    height: 90,
-                    child: Text('Physic',
-                        style: Theme.of(context).textTheme.headline4)),
+                    height: 250,
+                    width: 250,
+                    child: Lottie.asset('assets/lottie/register.json')),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: Text('Enter Your Details',
+                      style: Theme.of(context).textTheme.headline5),
+                ),
                 TextFormField(
                   validator: (value) {
                     if (value!.trim().isEmpty) {
@@ -152,19 +158,19 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 13,
                 ),
                 integerFieldHandler(_ageController, 'Age'),
                 SizedBox(
-                  height: 20,
+                  height: 13,
                 ),
                 integerFieldHandler(_heightController, 'Height'),
                 SizedBox(
-                  height: 20,
+                  height: 13,
                 ),
                 integerFieldHandler(_weightController, 'Weight'),
                 SizedBox(
-                  height: 20,
+                  height: 13,
                 ),
                 Container(
                   decoration: BoxDecoration(
