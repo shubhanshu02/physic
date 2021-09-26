@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:lottie/lottie.dart';
 import '../colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: color2,
+              color: Colors.white,
             ),
           ),
           ListView(children: <Widget>[
@@ -91,12 +92,16 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text('Physic', style: Theme.of(context).textTheme.headline4),
                 SizedBox(
-                  height: 20.0,
+                  height: 80.0,
                 ),
+                Container(
+                    height: 300,
+                    width: 300,
+                    child: Lottie.asset('assets/lottie/login.json')),
+                Text('Physic', style: Theme.of(context).textTheme.headline3),
                 SizedBox(
-                  height: 500.0,
+                  height: 50.0,
                 ),
                 Container(
                   child: RaisedButton(
