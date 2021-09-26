@@ -28,7 +28,7 @@ class _NavigateState extends State<Navigate> {
     return Scaffold(
       body: children[currentIndex],
       bottomNavigationBar:CurvedNavigationBar(
-        backgroundColor: Color(0xFF1D5149),
+        backgroundColor:Color(0xFF559584),
         color:  Color(0xFF17352E),
         buttonBackgroundColor: Color(0xFF17352E),
         height: 60,
