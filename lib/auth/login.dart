@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0))),
-                    color: loginChange ? Colors.transparent : color1,
+                    color: loginChange ? Colors.transparent : Color(0xFF559584),
                     onPressed: () {
                       loginStateChange();
                       _handleButtonClick();
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                               topLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0))),
                   color:
-                      registerChange ? Colors.transparent : Color(0xFFF49F1C),
+                      registerChange ? Colors.transparent : Color(0xFF559584),
                   onPressed: () {
                     registerStateChange();
                     _handleButtonClick();

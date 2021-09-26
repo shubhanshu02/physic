@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:physic/profile.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,6 +24,20 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
           ),
         ),
+       actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.logout,
+            color: Colors.white,
+          ),
+          onPressed: () async{
+            // do something
+            await FirebaseAuth.instance.signOut();
+                await GoogleSignIn().signOut();
+                Navigator.pushReplacementNamed(context, '/');
+          },
+        )
+  ],
       ),
       body: Container(
         color: Color(0xFF559584),
