@@ -84,9 +84,9 @@ class _RegisterFormState extends State<RegisterForm> {
       'uid': user!.uid,
       'email': user!.email,
       'name': _nameController.text,
-      'age': int.parse(_ageController.text),
-      'weigth': int.parse(_weightController.text),
-      'height': int.parse(_heightController.text),
+      'age': (_ageController.text),
+      'weight': (_weightController.text),
+      'height': (_heightController.text),
       'gender': gender,
       'teamId': team,
     });
@@ -248,6 +248,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         TeamData('Public Relations', 'TpkRIyJEVY689DilgJAE'),
                         TeamData(
                             'Information Technology', 'zw6CNkJWPwqh1rnRnK0A'),
+                        TeamData('Maintenance', 'ASvUyihv73zUyKuQ0F8b')
                       ].map<DropdownMenuItem<String>>((TeamData value) {
                         return DropdownMenuItem<String>(
                           value: value.id,

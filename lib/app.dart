@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:physic/auth/login.dart';
 import 'package:physic/auth/register.dart';
+import 'package:physic/navigation.dart';
 
 class Physic extends StatelessWidget {
   @override
@@ -10,8 +11,7 @@ class Physic extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(title: 'Physic', routes: {
-      '/': (context) => LoginPage(),
-      // '/': (context) => (FirebaseAuth.instance.currentUser == null) ? LoginPage() : User1(),
+      '/': (context) => (FirebaseAuth.instance.currentUser == null) ? LoginPage() : Navigate(),
       '/register': (context) => RegisterPage(),
     });
   }
