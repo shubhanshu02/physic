@@ -400,7 +400,7 @@ class _ProfileState extends State<Profile> {
             );
           else
             return Container(
-              color: Colors.amber,
+              color: Color(0xFF559584),
             );
         });
   }

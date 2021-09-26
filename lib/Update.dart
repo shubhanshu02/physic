@@ -14,14 +14,16 @@ class food{
 List < String > exercise = [
   "Cycling",
   "Running",
+  "Pull Ups",
+  "Pull Ups",
   "Push Ups",
 ];
 
 List< food > foods =[
-  food("paneer",50),
-  food("pizza",350),
+  food("Paneer",50),
+  food("Pizza",350),
   food("Burger",250),
-  food("Capsicum",70),
+  food("Milk",70),
   food("Chocolate",500),
 ];
 
