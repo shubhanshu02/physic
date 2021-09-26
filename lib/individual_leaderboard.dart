@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -54,7 +56,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
             children: [
               SizedBox(height: 20),
               Text(
-                widget.id,
+                "This Week's Score",
                 style: TextStyle(
                     foreground: Paint()..shader = linearGradient,
                     fontSize: 30,
@@ -114,16 +116,21 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 45),
-                                        child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(
-                                            document['name'],
-                                            style: TextStyle(
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 0.8),
-                                                fontSize: 20,
-                                                letterSpacing: 1.35,
-                                                fontFamily: 'Fjalla_One'),
+                                        child: Container(
+                                          width: 113,
+                                          child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              document['name'],
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      255, 255, 255, 0.8),
+                                                  fontSize: 17,
+                                                  letterSpacing: 1.35,
+                                                  fontFamily: 'Fjalla_One'),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -133,7 +140,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Calories taken: 10',
+                                            'Calories taken: ${(new Random().nextInt(10000) + 609)}',
                                             style: TextStyle(
                                               color: Color.fromRGBO(
                                                   255, 255, 255, 0.8),
@@ -141,7 +148,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                           ),
                                           SizedBox(height: 10),
                                           Text(
-                                            'Calories Burnt: 10',
+                                            'Calories Burnt: ${(new Random().nextInt(10000) + 139)}',
                                             style: TextStyle(
                                               color: Color.fromRGBO(
                                                   255, 255, 255, 0.8),
@@ -166,7 +173,9 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                               Color.fromRGBO(255, 255, 255, 1),
                                           child: Align(
                                             alignment: Alignment.center,
-                                            child: Text('10',
+                                            child: Text(
+                                                (new Random().nextInt(100) + 1)
+                                                    .toString(),
                                                 style: TextStyle(
                                                     fontSize: 30,
                                                     letterSpacing: 1.35,
