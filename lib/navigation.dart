@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:physic/profile.dart';
 import 'leaderboard.dart';
 import 'homePage.dart';
+import 'package:physic/Update.dart';
 
 class Navigate extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _NavigateState extends State<Navigate> {
     HomePage(),
     LeaderboardPage(),
     Profile(),
-    Profile()
+    Update()
   ];
   int currentIndex=0;
 
