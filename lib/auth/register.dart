@@ -126,7 +126,7 @@ class _RegisterFormState extends State<RegisterForm> {
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Form(
         key: _formKey,
-        child: Column(
+        child: ListView(
           children: [
             Column(
               children: [
@@ -309,26 +309,4 @@ class _RegisterFormState extends State<RegisterForm> {
       ),
     );
   }
-}
-
-class CurveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path()
-      // set the "current point"
-      ..addArc(Rect.fromLTWH(0, 0, size.width / 2, size.width / 3), pi, -1.57)
-      ..lineTo(9 * size.width / 10, size.width / 3)
-      ..addArc(
-          Rect.fromLTWH(
-              size.width / 2, size.width / 3, size.width / 2, size.width / 3),
-          pi + 1.57,
-          1.57)
-      ..lineTo(size.width, 0)
-      ..lineTo(0, 0)
-      ..lineTo(0, size.width / 6);
-    return path;
-  }
-
-  @override
-  bool shouldReclip(oldCliper) => false;
 }
