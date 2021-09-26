@@ -12,8 +12,8 @@ class Navigate extends StatefulWidget {
 class _NavigateState extends State<Navigate> {
   final List<Widget> children = [
     HomePage(),
-    Profile(),
     LeaderboardPage(),
+    Profile(),
     Profile()
   ];
   int currentIndex=0;

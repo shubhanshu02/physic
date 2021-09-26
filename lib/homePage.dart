@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             Flexible(
               child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
-                      .collection('teams')
+                      .collection('users')
                       .snapshots(),
                   builder: (BuildContext context,
                       AsyncSnapshot<QuerySnapshot?> snapshot) {

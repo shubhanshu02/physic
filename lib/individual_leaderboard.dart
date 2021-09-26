@@ -1,9 +1,10 @@
 import 'dart:math';
-
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:date_format/date_format.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 class IndividualLeaderboard extends StatefulWidget {
@@ -15,6 +16,7 @@ class IndividualLeaderboard extends StatefulWidget {
 
 class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
   DateTime currentDate = DateTime.now();
+  var faker = new Faker();
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
         context: context,
@@ -30,6 +32,8 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
 
   @override
   Widget build(BuildContext context) {
+    final formattedStr = formatDate(currentDate, [dd, '-', mm, '-', yyyy]);
+
     return Scaffold(
         backgroundColor: Color.fromRGBO(85, 149, 132, 1),
         appBar: AppBar(
@@ -56,7 +60,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
             children: [
               SizedBox(height: 20),
               Text(
-                "This Week's Score",
+                "${formattedStr}'s Score",
                 style: TextStyle(
                     foreground: Paint()..shader = linearGradient,
                     fontSize: 30,
@@ -121,7 +125,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                           child: Align(
                                             alignment: Alignment.centerLeft,
                                             child: Text(
-                                              document['name'],
+                                              faker.person.name(),
                                               maxLines: 2,
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
@@ -140,7 +144,7 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Calories taken: ${(new Random().nextInt(10000) + 609)}',
+                                            'Calories taken: ${(new Random().nextInt(2500) + 609)}',
                                             style: TextStyle(
                                               color: Color.fromRGBO(
                                                   255, 255, 255, 0.8),
@@ -148,14 +152,15 @@ class _IndividualLeaderboardState extends State<IndividualLeaderboard> {
                                           ),
                                           SizedBox(height: 10),
                                           Text(
-                                            'Calories Burnt: ${(new Random().nextInt(10000) + 139)}',
+                                            'Calories Burnt: ${(new Random().nextInt(2500) + 139)}',
                                             style: TextStyle(
                                               color: Color.fromRGBO(
                                                   255, 255, 255, 0.8),
                                             ),
                                           ),
                                         ],
-                                      )
+                                      ),
+                                      Spacer(),
                                     ],
                                   ),
                                 ),
